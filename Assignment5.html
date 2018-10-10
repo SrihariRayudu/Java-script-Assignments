@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <script>
+  function sortbtn()
+  {
+ var type= document.getElementById("sorttec").value;
+ if(type == 'bub'){
+ console.log("BubbleSort.....");
+ // document.write(bubble_Sort(JSON.parse("[" + document.getElementById("sort").value + "]")));
+  document.getElementById("data").innerHTML =(bubble_Sort(JSON.parse("[" + document.getElementById("sort").value + "]")));
+  }
+  else{
+  console.log("SelectionSort.....");
+   //document.write(selectionSort(JSON.parse("[" + document.getElementById("sort").value + "]")));
+   document.getElementById("data").innerHTML=(selectionSort(JSON.parse("[" + document.getElementById("sort").value + "]")));
+   }
+  }
+  
+  
+
+
+function swap(arr, first_Index, second_Index){
+    var temp = arr[first_Index];
+    arr[first_Index] = arr[second_Index];
+    arr[second_Index] = temp;
+}
+
+function bubble_Sort(arr){
+
+    var len = arr.length,
+        i, j, stop;
+
+    for (i=0; i < len; i++){
+        for (j=0, stop=len-i; j < stop; j++){
+            if (arr[j] > arr[j+1]){
+                swap(arr, j, j+1);
+            }
+        }
+    }
+
+    return arr;
+}
+
+function selectionSort(arr){
+  var minIdx, temp, 
+      len = arr.length;
+  for(var i = 0; i < len; i++){
+    minIdx = i;
+    for(var  j = i+1; j<len; j++){
+       if(arr[j]<arr[minIdx]){
+          minIdx = j;
+       }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIdx];
+    arr[minIdx] = temp;
+  }
+  return arr;
+}
+  
+  </script>
+  </head>
+ <body>
+ <h1>JavaScript program to sort a list of elements</h1>
+  Enter comma seperated values : <input  id="sort" type="text" placeholder="please enter comma seperated values">
+  <br>
+  Sorting type :<select name="sorttec" id="sorttec">
+  <option value="bub">BubbleSort</option>
+  <option value="sel">SelectionSort</option>
+  </select>
+   <br>
+  <button onclick="sortbtn()">sort</button>
+   <br>
+  <span id="data"></span>
+  
+  </body> 
+  </html>

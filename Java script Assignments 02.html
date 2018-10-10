@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sort an array of JavaScript objects</h2>
+
+
+
+<button onclick="mySort()">Sort</button>
+
+<p id="demo"></p>
+
+<script>
+var employee = [
+{name:"Srihari", id:20009351},
+{name:"Srinu",   id:20009851},
+{name:"Satish",  id:20009251},
+{name:"Madhavi",  id:20009151}
+]
+
+displayEmpolyees();
+
+function mySort() {
+    employee.sort(function(a, b){return a.id - b.id});
+    displayEmpolyees();
+}
+
+function displayEmpolyees() {
+  document.getElementById("demo").innerHTML ="<table><tr><td>Name</td><td>ID</td></tr>"+
+  "<tr><td>"+employee[0].name + "</td><td>" + employee[0].id + "</td></tr>" +
+  "<tr><td>"+employee[1].name + "</td><td>" + employee[1].id + "</td></tr>" +
+  "<tr><td>"+employee[2].name + "</td><td>" + employee[2].id + "</td></tr>" +
+  "<tr><td>"+employee[3].name + "</td><td>" + employee[3].id+"</tr></table>";
+}
+</script>
+
+</body>
+</html>

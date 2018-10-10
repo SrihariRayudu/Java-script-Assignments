@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <script>
+
+        function getArray() {
+
+
+            var cars = ["Saab", "Volvo", "BMW"];
+            var num = document.getElementById("id").value;
+            var numbers = /^[0-9]+$/;
+            if (!(num.match(numbers))) {
+                alert("Please enter valid number");
+                document.getElementById("id").value = '';
+                return;
+            }
+            cars.splice(0, (cars.length - num));
+            document.getElementById("demo").innerHTML = cars;
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="demo"></p>
+    Enter number:
+    <input type="text" name="value" id="id">
+    <button onclick="getArray()">Submit</button>
+    <script>
+        var cars = ["Saab", "Volvo", "BMW"];
+        document.getElementById("demo").innerHTML = cars;
+
+
+    </script>
+</body>
+
+</html>

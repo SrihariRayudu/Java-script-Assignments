@@ -1,0 +1,34 @@
+<html>
+<head>
+
+
+
+</head>
+<body>
+<h1 text-align="center">JavaScript function to parse an URL</h1>
+<h3>URL is http://example.com:12345/blog/foo/bar?startIndex=1&pageSize=10<h3>
+<script>
+const url = new URL('http://example.com:12345/blog/foo/bar?startIndex=1&pageSize=10');
+//alert("======url.hostname========"+url.hostname);  //  'example.com'
+url.port;      //  12345
+url.search;    //  '?startIndex=1&pageSize=10'
+url.pathname;  //  '/blog/foo/bar'
+url.protocol;
+document.write("<table>");
+document.write("<tr><td>url.hostname</td><td>"+url.hostname+"</td></tr>");
+document.write("<tr><td>url.port</td><td>"+url.port+"</td></tr>");
+document.write("<tr><td>url.search</td><td>"+url.search+"</td></tr>");
+document.write("<tr><td>url.pathname</td><td>"+url.pathname+"</td></tr>");
+document.write("<tr><td>url.protocol</td><td>"+url.protocol+"</td></tr>");
+
+document.write("</table>");
+
+
+
+
+</script>
+
+</body>
+
+
+</html>
